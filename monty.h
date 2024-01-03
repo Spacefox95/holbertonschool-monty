@@ -1,6 +1,13 @@
 #ifndef MONTY_CODE
 #define MONTY_CODE
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+#include <errno.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -31,5 +38,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+int main(int argc, char *argv[]);
+int get_file(char *filename);
 
 #endif
