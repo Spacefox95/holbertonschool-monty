@@ -36,11 +36,9 @@ int main(int argc, char *argv[])
 	token = strtok(buffer, " \t\n");
 	while (token != NULL)
 	{
-		printf("%s\n", token);
 		token = strtok(NULL, " \t\n");
-		token++;
 	}
-	token = strtok(NULL, " \t\n");
-
+	free(buffer);
+	close(file);
 	return (0);
 }
