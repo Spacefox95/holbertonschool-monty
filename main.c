@@ -8,37 +8,34 @@
 
 int main(int argc, char *argv[])
 {
-	int file;
-	char *buffer, *token;
-	ssize_t BytesRead;
-	
+	void (*test)(stack_t **, unsigned int);
+	char *buffer, *line_str;
+	void (*function)(stack_t **, unsigned int);
+	void (*pall_funct)(stack_t **, unsigned int);
+	unsigned int i = 1;
+
+	stack_t *stack;
+
 	if (argc != 2)
 	{
 		printf("USAGE : monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file = open(argv[1], O_RDONLY);
-	if (file == -1)
+	filename = argv[1];
+	buffer = get_file_buffer(filename);
+	line_str = get_file_line(filename, 1);
+	
+	while (1)
 	{
-		printf("Error : Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
+		line_str = get_file_line(filename, i);
+		if (line_str == NULL)
+			break;
+		test = op_function(strtok(line_str, " \t\n"), &stack, i);
+		if (test == NULL) 
+			break;
+		test(&stack, i);
+		i++;
 	}
-	buffer = malloc(sizeof(char *) * 1000);
-	if (buffer == NULL)
-		return (0);
-	BytesRead = read(file, buffer, 1000);
-	if (BytesRead == -1)
-	{
-		free(buffer);
-		close(file);
-		exit(EXIT_FAILURE);
-	}
-	token = strtok(buffer, " \t\n");
-	while (token != NULL)
-	{
-		token = strtok(NULL, " \t\n");
-	}
-	free(buffer);
-	close(file);
+
 	return (0);
 }

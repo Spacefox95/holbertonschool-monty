@@ -12,11 +12,15 @@ void (*(op_function (char *command, stack_t __attribute__((unused)) **stack, uns
 	instruction_t com[] = {
 		{"push", push_fct},
 		{"pall", pall_fct},
-		{"pint", pint_fct},
+		/*{"pint", pint_fct},
 		{"pop", pop_fct},
 		{"swap", swap_fct},
 		{"add", add_fct},
+<<<<<<< HEAD
 		{"nop", nop_fct},
+=======
+		{"nop", nop_fct},*/
+>>>>>>> nathan
 		{NULL, NULL}
 	};
 
@@ -28,5 +32,5 @@ void (*(op_function (char *command, stack_t __attribute__((unused)) **stack, uns
 			return (com[i].f);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
