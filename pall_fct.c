@@ -1,5 +1,6 @@
 #include "monty.h"
 
+
 void pall_fct(stack_t **stack, unsigned int __attribute__((unused))line_number)
 {
 	stack_t *temp = *stack;
