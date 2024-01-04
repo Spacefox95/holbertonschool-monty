@@ -7,7 +7,7 @@
  */
 
 
-int op_function (char command, stack_t **stack, unsigned int line_number)
+void (*(op_function (char *command, stack_t __attribute__((unused)) **stack, unsigned int __attribute__((unused)) line_number)))(stack_t **, unsigned int)
 {
 	instruction_t com[] = {
 		{"push", push_fct},
@@ -16,7 +16,7 @@ int op_function (char command, stack_t **stack, unsigned int line_number)
 		{"pop", pop_fct},
 		{"swap", swap_fct},
 		{"add", add_fct},
-		{"nop", ,op_fct},
+		{"nop", nop_fct},
 		{NULL, NULL}
 	};
 

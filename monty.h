@@ -40,5 +40,12 @@ typedef struct instruction_s
 
 int main(int argc, char *argv[]);
 int get_file(char *filename);
+void push_fct(stack_t **stack, unsigned int line_number);
+void pint_fct(stack_t **stack, unsigned int line_number);
+void pop_fct(stack_t **stack, unsigned int line_number);
+void swap_fct(stack_t **stack, unsigned int line_number);
+void add_fct(stack_t **stack, unsigned int line_number);
+void nop_fct(stack_t **stack, unsigned int line_number);
+void pall_fct(stack_t **stack, unsigned int line_number);
 
 #endif
