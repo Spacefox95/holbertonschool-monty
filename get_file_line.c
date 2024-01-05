@@ -2,10 +2,11 @@
 
 char *get_file_line(const char *filename,unsigned int line)
 {
-	char *token = NULL;
+	char *token = NULL, *buffer;
 	unsigned int counter = 1;
 
-	token = strtok(get_file_buffer(filename), "\n");
+	buffer = get_file_buffer(filename);
+	token = strtok(buffer, "\n");
 
 	while (counter != line && token != NULL)
 	{
@@ -13,5 +14,7 @@ char *get_file_line(const char *filename,unsigned int line)
 		counter++;
 	}
 
+	free(buffer);
+	buffer = NULL;
 	return (token);
 }

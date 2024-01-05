@@ -3,7 +3,7 @@
 unsigned int get_lines_number(const char *filename)
 {
     unsigned int counter = 0;
-    char *buffer = NULL;
+    char *buffer;
 
     if (filename == NULL)
     {
@@ -24,5 +24,8 @@ unsigned int get_lines_number(const char *filename)
         }
         buffer++;
     }
+
+    free(buffer);
+    buffer = NULL;
     return (counter);
 }

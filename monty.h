@@ -43,6 +43,7 @@ typedef struct instruction_s
 int main(int argc, char *argv[]);
 char *split_until_int(const char *str);
 char *split_until_char(const char *line_str);
+void _free(stack_t **stack);
 void (*(op_function (char *command)))(stack_t **, unsigned int);
 
 char *get_file_buffer(const char *filename);

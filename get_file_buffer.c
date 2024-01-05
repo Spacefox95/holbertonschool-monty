@@ -13,7 +13,7 @@ char *get_file_buffer(const char *filename)
         exit(EXIT_FAILURE);
     }
 
-	buffer = malloc(sizeof(char *) * 1024);
+	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
     {
         fprintf(stderr, "Error: malloc failed\n");

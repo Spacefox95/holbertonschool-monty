@@ -45,6 +45,6 @@ int main(int argc, char *argv[])
 		i++;
 	}
 
-	free(stack);
+	_free(&stack);
 	return (0);
 }
