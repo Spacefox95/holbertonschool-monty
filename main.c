@@ -11,8 +11,8 @@ char *filename;
 int main(int argc, char *argv[])
 {
 	void (*test)(stack_t **, unsigned int);
-	char *line_str;
-	unsigned int i = 1;
+	char *line_str = NULL, *command = NULL;
+	unsigned int i = 1, file_lines_count = 0;
 
 	stack_t *stack = NULL;
 
@@ -23,17 +23,23 @@ int main(int argc, char *argv[])
 	}
 
 	filename = argv[1];
+	file_lines_count = get_lines_number((const char *) filename);
 	
-	while (1)
+	while (i <= file_lines_count)
 	{
 		line_str = get_file_line(filename, i);
 		if (line_str == NULL)
-			break;
-		test = op_function(strtok(line_str, " "));
+		{
+			i++;
+			continue;
+		}
+
+		command = strtok(split_until_char((const char *) line_str), " \t\n");
+		test = op_function(command);
 		if (test == NULL)
 		{
-			printf("Can't find function\n");
-			break;
+			fprintf(stderr, "L<%d>: unknown instruction %s\n", i, line_str);
+			exit(EXIT_FAILURE);
 		}
 		test(&stack, i);
 		i++;

@@ -16,13 +16,13 @@ void (*(op_function (char *command)))(stack_t **, unsigned int)
 		{"pop", pop_fct},
 		{"swap", swap_fct},
 		{"add", add_fct},
-		/*{"nop", nop_fct},*/
+		{"nop", nop_fct},
 		{NULL, NULL}
 	};
 
 	int i = 0;
 
-	while (com[i].f != NULL)
+	while (com[i].f != NULL && command != NULL)
 	{
 		if (strcmp(command, com[i].opcode) == 0)
 			return (com[i].f);
