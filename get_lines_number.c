@@ -25,7 +25,5 @@ unsigned int get_lines_number(const char *filename)
         buffer++;
     }
 
-    free(buffer);
-    buffer = NULL;
     return (counter);
 }
