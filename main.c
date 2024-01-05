@@ -6,36 +6,39 @@
  *
  */
 
+char *filename;
+
 int main(int argc, char *argv[])
 {
 	void (*test)(stack_t **, unsigned int);
-	char *buffer, *line_str;
-	void (*function)(stack_t **, unsigned int);
-	void (*pall_funct)(stack_t **, unsigned int);
+	char *line_str;
 	unsigned int i = 1;
 
-	stack_t *stack;
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
 		printf("USAGE : monty file\n");
 		exit(EXIT_FAILURE);
 	}
+
 	filename = argv[1];
-	buffer = get_file_buffer(filename);
-	line_str = get_file_line(filename, 1);
 	
 	while (1)
 	{
 		line_str = get_file_line(filename, i);
 		if (line_str == NULL)
 			break;
-		test = op_function(strtok(line_str, " \t\n"), &stack, i);
-		if (test == NULL) 
+		test = op_function(strtok(line_str, " "));
+		if (test == NULL)
+		{
+			printf("Can't find function\n");
 			break;
+		}
 		test(&stack, i);
 		i++;
 	}
 
+	free(stack);
 	return (0);
 }
