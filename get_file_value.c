@@ -24,22 +24,14 @@ void *get_file_value(char *buffer, instruction_t *com)
 				if (strcmp(token, "push") == 0)
 				{
 					token = strtok(NULL, " \t\n");
-<<<<<<< HEAD
-					if (token != NULL)
-=======
 					if (token != NULL && (*token >= '0' && *token <= '9'))
->>>>>>> nathan
 					{
 						value = atoi(token);
 						com[i].f(&stack, value);
 					}
 					else
 					{
-<<<<<<< HEAD
-						fprintf(stderr, "L%d: unsage: push integer", line_str);
-=======
 						fprintf(stderr, "L%d: usage: push integer\n", line_str);
->>>>>>> nathan
 						free_stack(stack);
 						free(buffer);
 						exit(EXIT_FAILURE);
@@ -53,11 +45,7 @@ void *get_file_value(char *buffer, instruction_t *com)
 		}
 		if (!check)
 		{
-<<<<<<< HEAD
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_str, token);
-=======
-			fprintf(stderr, "L%d: unknown instruction %s\n", value, token);
->>>>>>> nathan
 			exit(EXIT_FAILURE);
 		}
 		token = strtok(NULL, " \t\n");
