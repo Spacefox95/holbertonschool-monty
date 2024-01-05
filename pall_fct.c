@@ -15,5 +15,4 @@ void pall_fct(stack_t **stack, unsigned int __attribute__((unused))line_number)
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
-
 }
