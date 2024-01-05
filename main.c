@@ -1,44 +1,43 @@
 #include "monty.h"
 
 /**
- *
- *
- *
+ * main - main function for a monty interpreter
+ * @argc: argument passed in stream counter
+ * @argv: program and name of the file
+ * Return: 0 if success
  */
 
 int main(int argc, char *argv[])
 {
-	int file;
 	char *buffer, *token;
-	ssize_t BytesRead;
-	
+
+	stack_t *stack = NULL;
+
+	instruction_t com[] = {
+		{"push", push_fct},
+		{"pall", pall_fct},
+
+		/**
+		 * {"pint", pint_fct},
+		 * {"pop", pop_fct},
+		 * {"swap", swap_fct},
+		 * {"add", add_fct},
+		 * {"nop", nop_fct},
+		 */
+
+		{NULL, NULL}
+	};
+
 	if (argc != 2)
 	{
 		printf("USAGE : monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file = open(argv[1], O_RDONLY);
-	if (file == -1)
-	{
-		printf("Error : Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
-	buffer = malloc(sizeof(char *) * 1000);
-	if (buffer == NULL)
-		return (0);
-	BytesRead = read(file, buffer, 1000);
-	if (BytesRead == -1)
-	{
-		free(buffer);
-		close(file);
-		exit(EXIT_FAILURE);
-	}
-	token = strtok(buffer, " \t\n");
-	while (token != NULL)
-	{
-		token = strtok(NULL, " \t\n");
-	}
+	buffer = get_file_buffer(argv[1]);
+	token = get_file_value(buffer, com);
+
+	free_stack(stack);
+	free(token);
 	free(buffer);
-	close(file);
 	return (0);
 }
