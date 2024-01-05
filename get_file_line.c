@@ -14,7 +14,5 @@ char *get_file_line(const char *filename,unsigned int line)
 		counter++;
 	}
 
-	free(buffer);
-	buffer = NULL;
 	return (token);
 }
