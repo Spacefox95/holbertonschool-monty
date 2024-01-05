@@ -52,8 +52,8 @@ void push_fct(stack_t **stack, unsigned int line_number);
 void pint_fct(stack_t **stack, unsigned int line_number);
 void pop_fct(stack_t **stack, unsigned int line_number);
 void swap_fct(stack_t **stack, unsigned int line_number);
-/*void add_fct(stack_t **stack, unsigned int line_number);
-void nop_fct(stack_t **stack, unsigned int line_number);*/
+void add_fct(stack_t **stack, unsigned int line_number);
+/*void nop_fct(stack_t **stack, unsigned int line_number);*/
 void pall_fct(stack_t **stack, unsigned int line_number);
 
 char *get_file_buffer(const char *filename);

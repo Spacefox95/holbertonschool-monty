@@ -15,8 +15,8 @@ void (*(op_function (char *command)))(stack_t **, unsigned int)
 		{"pint", pint_fct},
 		{"pop", pop_fct},
 		{"swap", swap_fct},
-		/*{"add", add_fct},
-		{"nop", nop_fct},*/
+		{"add", add_fct},
+		/*{"nop", nop_fct},*/
 		{NULL, NULL}
 	};
 
