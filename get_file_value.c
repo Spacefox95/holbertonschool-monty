@@ -24,13 +24,14 @@ void *get_file_value(char *buffer, instruction_t *com)
 				if (strcmp(token, "push") == 0)
 				{
 					token = strtok(NULL, " \t\n");
-					if (token != NULL)
+					if (token != NULL && (*token >= '0' && *token <= '9'))
 					{
 						value = atoi(token);
 						com[i].f(&stack, value);
 					}
 					else
 					{
+						fprintf(stderr, "L%d: usage: push integer\n", line_str);
 						free_stack(stack);
 						free(buffer);
 						exit(EXIT_FAILURE);
