@@ -1,27 +1,30 @@
 #include "monty.h"
 
 /**
- *
- *
- *
+ * main - main function for a monty interpreter
+ * @argc: argument passed in stream counter
+ * @argv: program and name of the file
+ * Return: 0 if success
  */
 
 int main(int argc, char *argv[])
 {
 	char *buffer, *token;
-	int i, check, value;
-	unsigned int line_str = 1;
 
 	stack_t *stack = NULL;
 
 	instruction_t com[] = {
 		{"push", push_fct},
 		{"pall", pall_fct},
-		/*{"pint", pint_fct},
-		  {"pop", pop_fct},
-		  {"swap", swap_fct},
-		  {"add", add_fct},
-		  {"nop", nop_fct},*/
+
+		/**
+		 * {"pint", pint_fct},
+		 * {"pop", pop_fct},
+		 * {"swap", swap_fct},
+		 * {"add", add_fct},
+		 * {"nop", nop_fct},
+		 */
+
 		{NULL, NULL}
 	};
 
@@ -31,48 +34,10 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	buffer = get_file_buffer(argv[1]);
-	token = strtok(buffer, " \t\n");
+	token = get_file_value(buffer, com);
 
-	while (token != NULL)
-	{
-		for (i = 0 ; com[i].opcode != NULL ; i++)
-		{
-			if (strcmp(token, com[i].opcode) == 0)
-			{
-				if (strcmp (token, "push") == 0)
-				{
-					token = strtok(NULL, " \t\n");
-					if (token != NULL)
-					{
-						value = atoi(token);
-						com[i].f(&stack, value);
-					}
-					else
-					{
-						fprintf(stderr, "Missing value for push");
-						free_stack(stack);
-						free(buffer);
-						exit(EXIT_FAILURE);
-					}
-				}
-				else
-				{
-					com[i].f(&stack, line_str);
-				}
-				check = 1;
-				break;
-			}
-		}
-
-		if (!check)
-		{
-			fprintf(stderr, "L<line_number>: unknown instruction <opcode>\n");
-			exit(EXIT_FAILURE);
-		}
-		token = strtok(NULL, " \t\n");
-		line_str++;
-	}
 	free_stack(stack);
+	free(token);
 	free(buffer);
 	return (0);
 }

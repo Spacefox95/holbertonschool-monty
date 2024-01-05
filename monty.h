@@ -8,8 +8,6 @@
 #include <string.h>
 #include <errno.h>
 
-char *filename;
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -42,6 +40,7 @@ typedef struct instruction_s
 
 int main(int argc, char *argv[]);
 char *get_file_buffer(const char *filename);
+void *get_file_value(char *buffer, instruction_t *com);
 void push_fct(stack_t **stack, unsigned int line_number);
 /*void pint_fct(stack_t **stack, unsigned int line_number);
 void pop_fct(stack_t **stack, unsigned int line_number);

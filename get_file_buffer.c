@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * get_file_buffer - open the file and read it
+ * @filename: name of the file
+ * Return: the read file
+ */
+
 char *get_file_buffer(const char *filename)
 {
 	int file;

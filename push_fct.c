@@ -1,13 +1,15 @@
 #include "monty.h"
 
 /**
- *
- *
+ * push_fct - add node the the stack
+ * @stack: the stack
+ * @line_number: line counter
  */
 
 void push_fct(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
+
 	new_node = (stack_t *)malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
