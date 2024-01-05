@@ -19,7 +19,7 @@ char *get_file_buffer(const char *filename)
         fprintf(stderr, "Error: malloc failed\n");
         close(file);
         return (NULL);
-    }
+   }
 
 	BytesRead = read(file, buffer, 1024);
 	if (BytesRead == -1)
