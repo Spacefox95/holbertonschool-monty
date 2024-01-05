@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	char *buffer, *token;
-	int i, check;
+	int i, check, value;
 	unsigned int line_str = 1;
 
 	stack_t *stack = NULL;
@@ -39,7 +39,26 @@ int main(int argc, char *argv[])
 		{
 			if (strcmp(token, com[i].opcode) == 0)
 			{
-				com[i].f(&stack, line_str);
+				if (strcmp (token, "push") == 0)
+				{
+					token = strtok(NULL, " \t\n");
+					if (token != NULL)
+					{
+						value = atoi(token);
+						com[i].f(&stack, value);
+					}
+					else
+					{
+						fprintf(stderr, "Missing value for push");
+						free_stack(stack);
+						free(buffer);
+						exit(EXIT_FAILURE);
+					}
+				}
+				else
+				{
+					com[i].f(&stack, line_str);
+				}
 				check = 1;
 				break;
 			}
@@ -48,8 +67,6 @@ int main(int argc, char *argv[])
 		if (!check)
 		{
 			fprintf(stderr, "L<line_number>: unknown instruction <opcode>\n");
-			free_stack(stack);
-			free(buffer);
 			exit(EXIT_FAILURE);
 		}
 		token = strtok(NULL, " \t\n");

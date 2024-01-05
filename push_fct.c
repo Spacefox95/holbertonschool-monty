@@ -5,7 +5,7 @@
  *
  */
 
-void push_fct(stack_t **stack, unsigned int value)
+void push_fct(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	new_node = (stack_t *)malloc(sizeof(stack_t));
@@ -15,7 +15,7 @@ void push_fct(stack_t **stack, unsigned int value)
 		fprintf(stderr, "Error: Memory allocation failed\n");
 		exit(EXIT_FAILURE);
 	}
-	new_node->n = value;
+	new_node->n = line_number;
 	new_node->prev = NULL;
 	new_node->next = *stack;
 

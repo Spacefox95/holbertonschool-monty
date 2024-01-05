@@ -42,7 +42,7 @@ typedef struct instruction_s
 
 int main(int argc, char *argv[]);
 char *get_file_buffer(const char *filename);
-void push_fct(stack_t **stack, unsigned int value);
+void push_fct(stack_t **stack, unsigned int line_number);
 /*void pint_fct(stack_t **stack, unsigned int line_number);
 void pop_fct(stack_t **stack, unsigned int line_number);
 void swap_fct(stack_t **stack, unsigned int line_number);
