@@ -19,7 +19,7 @@ char *get_file_buffer(const char *filename)
 		exit(EXIT_FAILURE);
 	}
 
-	buffer = malloc(1024);
+	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -27,11 +27,10 @@ char *get_file_buffer(const char *filename)
 		exit(EXIT_FAILURE);
 	}
 
-	BytesRead = read(file, buffer, 1024 - 1);
+	BytesRead = read(file, buffer, 1024);
 	if (BytesRead == -1)
 	{
 		fprintf(stderr, "Error: Can't read file %s\n", filename);
-		free(buffer);
 		close(file);
 		exit(EXIT_FAILURE);
 	}

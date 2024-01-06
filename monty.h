@@ -8,6 +8,8 @@
 #include <string.h>
 #include <errno.h>
 
+extern char *filename;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,15 +41,19 @@ typedef struct instruction_s
 } instruction_t;
 
 int main(int argc, char *argv[]);
+char *split_until_int(const char *str);
+char *split_until_char(const char *line_str);
+void _free(stack_t **stack);
+void (*(op_function (char *command)))(stack_t **, unsigned int);
 char *get_file_buffer(const char *filename);
-void *get_file_value(char *buffer, instruction_t *com);
+char *get_file_line(const char *filename,unsigned int line);
 void push_fct(stack_t **stack, unsigned int line_number);
-/*void pint_fct(stack_t **stack, unsigned int line_number);
+void pint_fct(stack_t **stack, unsigned int line_number);
 void pop_fct(stack_t **stack, unsigned int line_number);
 void swap_fct(stack_t **stack, unsigned int line_number);
 void add_fct(stack_t **stack, unsigned int line_number);
-void nop_fct(stack_t **stack, unsigned int line_number);*/
+void nop_fct(stack_t **stack, unsigned int line_number);
 void pall_fct(stack_t **stack, unsigned int line_number);
-void free_stack(stack_t *stack);
+unsigned int get_lines_number(const char *str);
 
 #endif

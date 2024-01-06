@@ -7,37 +7,44 @@
  * Return: 0 if success
  */
 
+char *filename;
+
 int main(int argc, char *argv[])
 {
-	char *buffer, *token;
+	void (*test)(stack_t **, unsigned int);
+	char *line_str = NULL, *command = NULL;
+	unsigned int i = 1, file_lines_count = 0;
 
 	stack_t *stack = NULL;
-
-	instruction_t com[] = {
-		{"push", push_fct},
-		{"pall", pall_fct},
-
-		/**
-		 * {"pint", pint_fct},
-		 * {"pop", pop_fct},
-		 * {"swap", swap_fct},
-		 * {"add", add_fct},
-		 * {"nop", nop_fct},
-		 */
-
-		{NULL, NULL}
-	};
 
 	if (argc != 2)
 	{
 		printf("USAGE : monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	buffer = get_file_buffer(argv[1]);
-	token = get_file_value(buffer, com);
 
-	free_stack(stack);
-	free(token);
-	free(buffer);
+	filename = argv[1];
+	file_lines_count = get_lines_number((const char *) filename);
+
+	while (i <= file_lines_count)
+	{
+		line_str = get_file_line(filename, i);
+		if (line_str == NULL)
+		{
+			i++;
+			continue;
+		}
+
+		command = strtok(split_until_char((const char *) line_str), " \t\n");
+		test = op_function(command);
+		if (test == NULL)
+		{
+			fprintf(stderr, "L<%d>: unknown instruction %s\n", i, line_str);
+			exit(EXIT_FAILURE);
+		}
+		test(&stack, i);
+		i++;
+	}
+
 	return (0);
 }
