@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * pall_fct - fct that display the stack
+ * pall - fct that display the stack
  * @stack: the stack
  * @line_number: line counter
  */
 
-void pall_fct(stack_t **stack, unsigned int __attribute__((unused))line_number)
+void pall(stack_t **stack, unsigned int __attribute__((unused))line_number)
 {
 	stack_t *temp = *stack;
 

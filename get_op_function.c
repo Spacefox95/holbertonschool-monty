@@ -10,12 +10,12 @@
 void (*op_function(char *command))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t com[] = {
-		{"pall", pall_fct},
-		{"pint", pint_fct},
-		{"pop", pop_fct},
-		{"swap", swap_fct},
-		{"add", add_fct},
-		{"nop", nop_fct},
+		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 

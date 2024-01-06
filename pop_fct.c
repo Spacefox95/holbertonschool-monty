@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * pop_fct - remove the top element of the stack
+ * pop - remove the top element of the stack
  * @stack: the stack
  * @line_number: number of line
  */
 
-void pop_fct(stack_t **stack, unsigned int line_number)
+void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 

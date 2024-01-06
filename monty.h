@@ -45,11 +45,11 @@ void _free(stack_t **stack);
 void (*op_function (char *command))(stack_t **stack, unsigned int line_number);
 char *get_file_buffer(const char *filename);
 void push(stack_t **stack, unsigned int line_number, char *buffer);
-void pint_fct(stack_t **stack, unsigned int line_number);
-void pop_fct(stack_t **stack, unsigned int line_number);
-void swap_fct(stack_t **stack, unsigned int line_number);
-void add_fct(stack_t **stack, unsigned int line_number);
-void nop_fct(stack_t **stack, unsigned int line_number);
-void pall_fct(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 #endif

@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * add_fct - add at the top of the stack 2 elements
+ * add - add at the top of the stack 2 elements
  * @stack: the stack
  * @line_number: the line number
  */
 
-void add_fct(stack_t **stack, unsigned int line_number)
+void add(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
@@ -20,5 +20,5 @@ void add_fct(stack_t **stack, unsigned int line_number)
 	}
 
 	((*stack)->next)->n = ((*stack)->next)->n + (*stack)->n;
-	pop_fct(stack, line_number);
+	pop(stack, line_number);
 }
