@@ -41,6 +41,7 @@ typedef struct instruction_s
 } instruction_t;
 
 int main(int argc, char *argv[]);
+void exec(char *command);
 void _free(stack_t **stack);
 void (*op_function (char *command))(stack_t **stack, unsigned int line_number);
 char *get_file_buffer(char *filename);

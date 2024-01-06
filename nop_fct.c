@@ -6,7 +6,8 @@
  * @line_number: line number
  */
 
-void nop_fct(stack_t __attribute__((unused)) **stack, unsigned int __attribute__((unused)) line_number)
+void nop_fct(stack_t **stack, unsigned int line_number)
 {
-	return;
+	(void) stack;
+	(void) line_number;
 }

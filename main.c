@@ -10,9 +10,6 @@
 int main(int argc, char *argv[])
 {
 	char *command = NULL, *buffer = NULL;
-	unsigned int count = 1;
-	stack_t *stack = NULL;
-	int check = 0;
 
 	if (argc != 2)
 	{
@@ -22,36 +19,7 @@ int main(int argc, char *argv[])
 
 	buffer = get_file_buffer(argv[1]);
 	command = strtok(buffer, " \t\n");
-	while (command != NULL)
-	{
-		if (check == 1)
-		{
-			push_fct(&stack, count, command);
-			check = 0;
-			command = strtok(NULL, " \t\n");
-			count++;
-			continue;
-		}
-		else if (strcmp(command, "push") == 0)
-		{
-			check = 1;
-			command = strtok(NULL, " \t\n");
-			continue;
-		}
-		else
-		{
-			if (op_function(command) != 0)
-			{
-				op_function(command)(&stack, count);
-			}
-			else
-			{
-				fprintf(stderr, "L<%u>: unknown instruction %s\n", count, command);
-				exit(EXIT_FAILURE);
-			}
-		}
-		count++;
-		command = strtok(NULL, " \t\n");
-	}
+	exec(command);
+
 	return (0);
 }
