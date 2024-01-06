@@ -31,6 +31,7 @@ char *get_file_buffer(const char *filename)
 	if (BytesRead == -1)
 	{
 		fprintf(stderr, "Error: Can't read file %s\n", filename);
+		free(buffer);
 		close(file);
 		exit(EXIT_FAILURE);
 	}
