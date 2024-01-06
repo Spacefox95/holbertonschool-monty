@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 			continue;
 		}
 
-		command = strtok(split_until_char((const char *) line_str), " \t\n");
+		command = strtok(line_str, " \t\n");
 		test = op_function(command);
 		if (test == NULL)
 		{

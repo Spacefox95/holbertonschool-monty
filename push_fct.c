@@ -14,7 +14,8 @@ void push_fct(stack_t **stack, unsigned int line_number)
 	line = get_file_line(filename, line_number);
 	if (split_until_int((const char*) line) == NULL)
 	{
-		return;
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 	new_node = (stack_t *) malloc(sizeof(stack_t));
 	if (new_node == NULL)
