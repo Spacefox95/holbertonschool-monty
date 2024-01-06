@@ -7,10 +7,9 @@
  */
 
 
-void (*(op_function(char *command)))(stack_t **, unsigned int)
+void (*op_function(char *command))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t com[] = {
-		{"push", push_fct},
 		{"pall", pall_fct},
 		{"pint", pint_fct},
 		{"pop", pop_fct},

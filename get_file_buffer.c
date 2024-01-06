@@ -6,7 +6,7 @@
  * Return: the read file
  */
 
-char *get_file_buffer(const char *filename)
+char *get_file_buffer(char *filename)
 {
 	int file;
 	char *buffer;

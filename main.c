@@ -7,15 +7,12 @@
  * Return: 0 if success
  */
 
-char *filename;
-
 int main(int argc, char *argv[])
 {
-	void (*test)(stack_t **, unsigned int);
-	char *line_str = NULL, *command = NULL;
-	unsigned int i = 1, file_lines_count = 0;
-
+	char *command = NULL, *buffer = NULL;
+	unsigned int count = 1;
 	stack_t *stack = NULL;
+	int check = 0;
 
 	if (argc != 2)
 	{
@@ -23,28 +20,38 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	filename = argv[1];
-	file_lines_count = get_lines_number((const char *) filename);
-
-	while (i <= file_lines_count)
+	buffer = get_file_buffer(argv[1]);
+	command = strtok(buffer, " \t\n");
+	while (command != NULL)
 	{
-		line_str = get_file_line(filename, i);
-		if (line_str == NULL)
+		if (check == 1)
 		{
-			i++;
+			push_fct(&stack, count, command);
+			check = 0;
+			command = strtok(NULL, " \t\n");
+			count++;
 			continue;
 		}
-
-		command = strtok(line_str, " \t\n");
-		test = op_function(command);
-		if (test == NULL)
+		else if (strcmp(command, "push") == 0)
 		{
-			fprintf(stderr, "L<%d>: unknown instruction %s\n", i, line_str);
-			exit(EXIT_FAILURE);
+			check = 1;
+			command = strtok(NULL, " \t\n");
+			continue;
 		}
-		test(&stack, i);
-		i++;
+		else
+		{
+			if (op_function(command) != 0)
+			{
+				op_function(command)(&stack, count);
+			}
+			else
+			{
+				fprintf(stderr, "L<%u>: unknown instruction %s\n", count, command);
+				exit(EXIT_FAILURE);
+			}
+		}
+		count++;
+		command = strtok(NULL, " \t\n");
 	}
-
 	return (0);
 }

@@ -41,19 +41,15 @@ typedef struct instruction_s
 } instruction_t;
 
 int main(int argc, char *argv[]);
-char *split_until_int(const char *str);
-char *split_until_char(const char *line_str);
 void _free(stack_t **stack);
-void (*(op_function (char *command)))(stack_t **, unsigned int);
-char *get_file_buffer(const char *filename);
-char *get_file_line(const char *filename,unsigned int line);
-void push_fct(stack_t **stack, unsigned int line_number);
+void (*op_function (char *command))(stack_t **stack, unsigned int line_number);
+char *get_file_buffer(char *filename);
+void push_fct(stack_t **stack, unsigned int line_number, const char *buffer);
 void pint_fct(stack_t **stack, unsigned int line_number);
 void pop_fct(stack_t **stack, unsigned int line_number);
 void swap_fct(stack_t **stack, unsigned int line_number);
 void add_fct(stack_t **stack, unsigned int line_number);
 void nop_fct(stack_t **stack, unsigned int line_number);
 void pall_fct(stack_t **stack, unsigned int line_number);
-unsigned int get_lines_number(const char *str);
 
 #endif
