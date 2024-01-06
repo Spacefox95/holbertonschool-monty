@@ -13,6 +13,11 @@ void exec(char *command, stack_t **stack)
 
 	while (command != NULL)
 	{
+		if (strcmp(command, "push") == 0)
+		{
+			check = 1;
+			command = strtok(NULL, " \t\n");
+		}
 		if (check == 1)
 		{
 			push(stack, count, command);
@@ -21,23 +26,14 @@ void exec(char *command, stack_t **stack)
 			count++;
 			continue;
 		}
-		else if (strcmp(command, "push") == 0)
+		else if (op_function(command) != 0)
 		{
-			check = 1;
-			command = strtok(NULL, " \t\n");
-			continue;
-		}
-		else
-		{
-			if (op_function(command) != 0)
-			{
-				op_function(command)(stack, count);
-			}
-			else
+			if (op_function(command) == NULL)
 			{
 				fprintf(stderr, "L%u: unknown instruction %s\n", count, command);
 				exit(EXIT_FAILURE);
 			}
+			op_function(command)(stack, count);
 		}
 		count++;
 		command = strtok(NULL, " \t\n");
