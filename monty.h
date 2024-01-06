@@ -44,7 +44,7 @@ int main(int argc, char *argv[]);
 void exec(char *command, stack_t **stack);
 void _free(stack_t **stack);
 void (*op_function (char *command))(stack_t **stack, unsigned int line_number);
-char *get_file_buffer(char *filename);
+char *get_file_buffer(const char *filename);
 void push_fct(stack_t **stack, unsigned int line_number, const char *buffer);
 void pint_fct(stack_t **stack, unsigned int line_number);
 void pop_fct(stack_t **stack, unsigned int line_number);
