@@ -1,0 +1,210 @@
+==11515== Memcheck, a memory error detector
+==11515== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11515== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11515== Command: ./monty bytecodes/000.m
+==11515== 
+==11515== 
+==11515== HEAP SUMMARY:
+==11515==     in use at exit: 0 bytes in 0 blocks
+==11515==   total heap usage: 9 allocs, 9 frees, 2,216 bytes allocated
+==11515== 
+==11515== All heap blocks were freed -- no leaks are possible
+==11515== 
+==11515== For lists of detected and suppressed errors, rerun with: -s
+==11515== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11516== Memcheck, a memory error detector
+==11516== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11516== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11516== Command: ./monty bytecodes/001.m
+==11516== 
+==11516== 
+==11516== HEAP SUMMARY:
+==11516==     in use at exit: 0 bytes in 0 blocks
+==11516==   total heap usage: 9 allocs, 9 frees, 2,216 bytes allocated
+==11516== 
+==11516== All heap blocks were freed -- no leaks are possible
+==11516== 
+==11516== For lists of detected and suppressed errors, rerun with: -s
+==11516== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11518== Memcheck, a memory error detector
+==11518== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11518== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11518== Command: ./monty bytecodes/00.m
+==11518== 
+==11518== 
+==11518== HEAP SUMMARY:
+==11518==     in use at exit: 0 bytes in 0 blocks
+==11518==   total heap usage: 4 allocs, 4 frees, 2,096 bytes allocated
+==11518== 
+==11518== All heap blocks were freed -- no leaks are possible
+==11518== 
+==11518== For lists of detected and suppressed errors, rerun with: -s
+==11518== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11519== Memcheck, a memory error detector
+==11519== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11519== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11519== Command: ./monty bytecodes/06.m
+==11519== 
+==11519== 
+==11519== HEAP SUMMARY:
+==11519==     in use at exit: 0 bytes in 0 blocks
+==11519==   total heap usage: 5 allocs, 5 frees, 2,120 bytes allocated
+==11519== 
+==11519== All heap blocks were freed -- no leaks are possible
+==11519== 
+==11519== For lists of detected and suppressed errors, rerun with: -s
+==11519== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11520== Memcheck, a memory error detector
+==11520== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11520== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11520== Command: ./monty bytecodes/07.m
+==11520== 
+==11520== 
+==11520== HEAP SUMMARY:
+==11520==     in use at exit: 0 bytes in 0 blocks
+==11520==   total heap usage: 5 allocs, 5 frees, 2,120 bytes allocated
+==11520== 
+==11520== All heap blocks were freed -- no leaks are possible
+==11520== 
+==11520== For lists of detected and suppressed errors, rerun with: -s
+==11520== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11521== Memcheck, a memory error detector
+==11521== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11521== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11521== Command: ./monty bytecodes/09.m
+==11521== 
+==11521== 
+==11521== HEAP SUMMARY:
+==11521==     in use at exit: 0 bytes in 0 blocks
+==11521==   total heap usage: 5 allocs, 5 frees, 2,120 bytes allocated
+==11521== 
+==11521== All heap blocks were freed -- no leaks are possible
+==11521== 
+==11521== For lists of detected and suppressed errors, rerun with: -s
+==11521== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11522== Memcheck, a memory error detector
+==11522== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11522== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11522== Command: ./monty bytecodes/12.m
+==11522== 
+==11522== 
+==11522== HEAP SUMMARY:
+==11522==     in use at exit: 0 bytes in 0 blocks
+==11522==   total heap usage: 5 allocs, 5 frees, 2,120 bytes allocated
+==11522== 
+==11522== All heap blocks were freed -- no leaks are possible
+==11522== 
+==11522== For lists of detected and suppressed errors, rerun with: -s
+==11522== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11523== Memcheck, a memory error detector
+==11523== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11523== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11523== Command: ./monty bytecodes/d.m
+==11523== 
+L8: usage: push integer
+==11523== 
+==11523== HEAP SUMMARY:
+==11523==     in use at exit: 1,168 bytes in 7 blocks
+==11523==   total heap usage: 8 allocs, 1 frees, 2,192 bytes allocated
+==11523== 
+==11523== LEAK SUMMARY:
+==11523==    definitely lost: 0 bytes in 0 blocks
+==11523==    indirectly lost: 0 bytes in 0 blocks
+==11523==      possibly lost: 0 bytes in 0 blocks
+==11523==    still reachable: 1,168 bytes in 7 blocks
+==11523==         suppressed: 0 bytes in 0 blocks
+==11523== Rerun with --leak-check=full to see details of leaked memory
+==11523== 
+==11523== For lists of detected and suppressed errors, rerun with: -s
+==11523== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11524== Memcheck, a memory error detector
+==11524== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11524== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11524== Command: ./monty bytecodes/err.m
+==11524== 
+==11524== 
+==11524== HEAP SUMMARY:
+==11524==     in use at exit: 0 bytes in 0 blocks
+==11524==   total heap usage: 9 allocs, 9 frees, 2,216 bytes allocated
+==11524== 
+==11524== All heap blocks were freed -- no leaks are possible
+==11524== 
+==11524== For lists of detected and suppressed errors, rerun with: -s
+==11524== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11525== Memcheck, a memory error detector
+==11525== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11525== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11525== Command: ./monty bytecodes/julie.m
+==11525== 
+L7: usage: push integer
+==11525== 
+==11525== HEAP SUMMARY:
+==11525==     in use at exit: 1,144 bytes in 6 blocks
+==11525==   total heap usage: 7 allocs, 1 frees, 2,168 bytes allocated
+==11525== 
+==11525== LEAK SUMMARY:
+==11525==    definitely lost: 0 bytes in 0 blocks
+==11525==    indirectly lost: 0 bytes in 0 blocks
+==11525==      possibly lost: 0 bytes in 0 blocks
+==11525==    still reachable: 1,144 bytes in 6 blocks
+==11525==         suppressed: 0 bytes in 0 blocks
+==11525== Rerun with --leak-check=full to see details of leaked memory
+==11525== 
+==11525== For lists of detected and suppressed errors, rerun with: -s
+==11525== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11526== Memcheck, a memory error detector
+==11526== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11526== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11526== Command: ./monty bytecodes/julien.m
+==11526== 
+==11526== 
+==11526== HEAP SUMMARY:
+==11526==     in use at exit: 0 bytes in 0 blocks
+==11526==   total heap usage: 9 allocs, 9 frees, 2,216 bytes allocated
+==11526== 
+==11526== All heap blocks were freed -- no leaks are possible
+==11526== 
+==11526== For lists of detected and suppressed errors, rerun with: -s
+==11526== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11527== Memcheck, a memory error detector
+==11527== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11527== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11527== Command: ./monty bytecodes/monty.m
+==11527== 
+==11527== 
+==11527== HEAP SUMMARY:
+==11527==     in use at exit: 0 bytes in 0 blocks
+==11527==   total heap usage: 9 allocs, 9 frees, 2,216 bytes allocated
+==11527== 
+==11527== All heap blocks were freed -- no leaks are possible
+==11527== 
+==11527== For lists of detected and suppressed errors, rerun with: -s
+==11527== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11528== Memcheck, a memory error detector
+==11528== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11528== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11528== Command: ./monty bytecodes/nop.m
+==11528== 
+==11528== 
+==11528== HEAP SUMMARY:
+==11528==     in use at exit: 0 bytes in 0 blocks
+==11528==   total heap usage: 3 allocs, 3 frees, 2,072 bytes allocated
+==11528== 
+==11528== All heap blocks were freed -- no leaks are possible
+==11528== 
+==11528== For lists of detected and suppressed errors, rerun with: -s
+==11528== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==11529== Memcheck, a memory error detector
+==11529== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11529== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11529== Command: ./monty bytecodes/stack_short.m
+==11529== 
+==11529== 
+==11529== HEAP SUMMARY:
+==11529==     in use at exit: 0 bytes in 0 blocks
+==11529==   total heap usage: 4 allocs, 4 frees, 2,096 bytes allocated
+==11529== 
+==11529== All heap blocks were freed -- no leaks are possible
+==11529== 
+==11529== For lists of detected and suppressed errors, rerun with: -s
+==11529== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
