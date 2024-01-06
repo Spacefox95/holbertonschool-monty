@@ -3,19 +3,19 @@
 /**
  * exec - execute the function and count
  * @command: the function called
+ * @stack: the stack used
  */
 
-void exec(char *command)
+void exec(char *command, stack_t **stack)
 {
 	unsigned int count = 1;
-	stack_t *stack = NULL;
 	int check = 0;
 
 	while (command != NULL)
 	{
 		if (check == 1)
 		{
-			push_fct(&stack, count, command);
+			push_fct(stack, count, command);
 			check = 0;
 			command = strtok(NULL, " \t\n");
 			count++;
@@ -31,7 +31,7 @@ void exec(char *command)
 		{
 			if (op_function(command) != 0)
 			{
-				op_function(command)(&stack, count);
+				op_function(command)(stack, count);
 			}
 			else
 			{

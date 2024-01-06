@@ -10,6 +10,7 @@
 int main(int argc, char *argv[])
 {
 	char *command = NULL, *buffer = NULL;
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
@@ -19,7 +20,9 @@ int main(int argc, char *argv[])
 
 	buffer = get_file_buffer(argv[1]);
 	command = strtok(buffer, " \t\n");
-	exec(command);
+	exec(command, &stack);
+	free(command);
+	_free(&stack);
 
 	return (0);
 }
