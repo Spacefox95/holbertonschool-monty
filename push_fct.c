@@ -10,7 +10,7 @@
 void push(stack_t **stack, unsigned int line_number, char *buffer)
 {
 	stack_t *new_node;
-	int value;
+	int value, i;
 
 	new_node = (stack_t *) malloc(sizeof(stack_t));
 	if (new_node == NULL)
@@ -18,12 +18,16 @@ void push(stack_t **stack, unsigned int line_number, char *buffer)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	value = atoi(buffer);
-	if (value == 0)
+
+	for (i = 0 ; buffer[i] != '\0' ; i++)
 	{
-		printf("L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+		if (!isdigit((unsigned char)buffer[i]) && !(i == 0 && buffer[i] == '-'))
+		{
+			printf("L%u: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 	}
+	value = atoi(buffer);
 	new_node->n = value;
 	new_node->prev = NULL;
 	new_node->next = *stack;

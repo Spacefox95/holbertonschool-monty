@@ -35,7 +35,7 @@ void exec(char *command, stack_t **stack)
 			}
 			else
 			{
-				fprintf(stderr, "L<%u>: unknown instruction %s\n", count, command);
+				fprintf(stderr, "L%u: unknown instruction %s\n", count, command);
 				exit(EXIT_FAILURE);
 			}
 		}
