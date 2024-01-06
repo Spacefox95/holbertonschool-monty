@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * push_fct - add node the the stack
+ * push - add node the the stack
  * @stack: the stack
  * @line_number: line counter
  * @buffer: the character to add
  */
 
-void push_fct(stack_t **stack, unsigned int line_number, const char *buffer)
+void push(stack_t **stack, unsigned int line_number, char *buffer)
 {
 	stack_t *new_node;
 	int value;
@@ -18,7 +18,6 @@ void push_fct(stack_t **stack, unsigned int line_number, const char *buffer)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-
 	value = atoi(buffer);
 	if (value == 0)
 	{

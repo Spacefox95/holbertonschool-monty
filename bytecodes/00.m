@@ -1,5 +1,5 @@
 push 1
-push
-push 3
+push 2
+push tes
 test
 pall

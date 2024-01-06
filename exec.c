@@ -15,7 +15,7 @@ void exec(char *command, stack_t **stack)
 	{
 		if (check == 1)
 		{
-			push_fct(stack, count, command);
+			push(stack, count, command);
 			check = 0;
 			command = strtok(NULL, " \t\n");
 			count++;

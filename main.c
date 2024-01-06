@@ -9,7 +9,8 @@
 
 int main(int argc, char *argv[])
 {
-	char *command = NULL, *buffer = NULL;
+	char *command = NULL;
+	char *buffer = NULL;
 	stack_t *stack = NULL;
 
 	if (argc != 2)
